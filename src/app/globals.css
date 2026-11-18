@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm, friendly pet-care palette (light) */
+    --background: 36 60% 97%; /* soft cream */
+    --foreground: 24 14% 14%; /* warm near-black */
+    --card: 0 0% 100%;
+    --card-foreground: 24 14% 14%;
+    --primary: 152 36% 38%; /* soft green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 80% 95%; /* peach cream */
+    --secondary-foreground: 24 45% 20%;
+    --muted: 36 40% 94%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 24 95% 55%; /* warm orange */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 36 35% 90%;
+    --input: 36 30% 85%;
+    --ring: 152 36% 38%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Warm "evening grooming salon" palette */
+    --background: 30 18% 9%;
+    --foreground: 40 28% 93%;
+    --card: 30 15% 13%;
+    --card-foreground: 40 28% 93%;
+    --primary: 152 32% 55%;
+    --primary-foreground: 30 25% 10%;
+    --secondary: 30 14% 19%;
+    --secondary-foreground: 40 25% 92%;
+    --muted: 30 12% 18%;
+    --muted-foreground: 35 12% 64%;
+    --accent: 24 92% 58%;
+    --accent-foreground: 30 25% 10%;
+    --destructive: 0 64% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 12% 22%;
+    --input: 30 12% 26%;
+    --ring: 152 32% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Make native controls (date inputs, scrollbars) follow the theme */
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.22);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Subtle dotted "paper" texture used behind hero / CTA */
+  .bg-dots {
+    background-image: radial-gradient(
+      hsl(var(--foreground) / 0.07) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Outlined display text for stickers / badges */
+  .text-outline {
+    -webkit-text-stroke: 1.5px hsl(var(--foreground) / 0.25);
+    color: transparent;
+  }
+}
+
+/* Custom scrollbar that works in both themes */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--foreground) / 0.15);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground) / 0.28);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
