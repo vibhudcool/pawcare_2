@@ -103,11 +103,11 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                +91 98765 43210
+                +91 9149366717
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                hello@pawcare.in
+                iamvaibhav1303@gmail.com
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="h-4 w-4 shrink-0 text-primary" />
